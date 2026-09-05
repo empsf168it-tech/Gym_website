@@ -10,7 +10,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenBooking }) => {
     <section id="contact" className="relative py-24 md:py-32 overflow-hidden flex items-center justify-center">
       {/* Background Image */}
       <img
-        src="/images/cta-bg.png"
+        src="./images/cta-bg.png"
         alt="Dramatic Gym Interior"
         className="absolute inset-0 w-full h-full object-cover object-center filter contrast-125"
       />

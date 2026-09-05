@@ -28,7 +28,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
           >
             <div className="relative rounded-2xl overflow-hidden border border-[#242424] shadow-2xl h-[450px] md:h-[540px]">
               <img
-                src="/images/about.png"
+                src="./images/about.png"
                 alt="Peter Cooper — Personal Trainer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter contrast-110"
               />

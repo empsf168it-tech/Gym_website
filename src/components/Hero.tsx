@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         className="absolute inset-0 w-full h-full pointer-events-none"
       >
         <img
-          src="/images/hero.png"
+          src="./images/hero.png"
           alt="APEX Personal Trainer background"
           className="w-full h-full object-cover object-center filter brightness-90 contrast-115"
         />

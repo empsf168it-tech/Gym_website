@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 97%;
+    --primary: 8 100% 50%;          /* #FF2400 Spray Paint Red */
+    --primary-foreground: 0 0% 100%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 55%;
+    --border: 0 0% 14%;
+    --card: 0 0% 6%;
+  }
+
+  body {
+    background-color: #080808;
+    color: #f7f7f7;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-barlow {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Custom visual effects for Spray Paint Red #FF2400 */
+.cta-primary {
+  background: linear-gradient(135deg, #FF4D36 0%, #FF2400 50%, #C81A00 100%);
+  color: #FFFFFF;
+  box-shadow: 0 0 32px rgba(255, 36, 0, 0.55), 0 0 64px rgba(255, 36, 0, 0.22);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-primary:hover {
+  box-shadow: 0 0 48px rgba(255, 36, 0, 0.8), 0 0 96px rgba(255, 36, 0, 0.4);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #FF6652 0%, #FF381A 50%, #D91F00 100%);
+}
+
+.glass-nav {
+  background: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2400;
+}

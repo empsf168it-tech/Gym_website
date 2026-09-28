@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       </div>
 
       {/* 4. Hero Main Content Container */}
-      <div className="relative z-10 max-w-[1120px] mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div className="relative z-10 max-w-[1120px] mx-auto px-6 pb-12 md:pb-16 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
         {/* Top Floating Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
@@ -124,9 +124,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         </motion.div>
 
         {/* H1 Animated kinetic Typography */}
-        <h1 className="font-['Barlow_Condensed'] font-black uppercase text-[clamp(4.5rem,11.5vw,9.8rem)] leading-[0.84] tracking-tight text-white">
+        <h1 className="font-['Barlow_Condensed'] font-black uppercase text-[clamp(4.5rem,11.5vw,9.8rem)] leading-[0.84] tracking-tight text-white w-full">
           {titleLines.map((line, idx) => (
-            <div key={idx} className="overflow-hidden">
+            <div key={idx} className="overflow-hidden flex justify-center lg:justify-start">
               <motion.span
                 initial={{ opacity: 0, y: 80, rotateX: -30, filter: "blur(12px)" }}
                 animate={{ opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)" }}
@@ -152,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="text-base md:text-lg text-neutral-300 mt-6 max-w-[460px] leading-relaxed font-normal"
+          className="text-base md:text-lg text-neutral-300 mt-6 max-w-[460px] leading-relaxed font-normal mx-auto lg:mx-0"
         >
           Professional personal training and online coaching. Customized scientific programs engineered for peak strength, fat loss & aggressive body transformations.
         </motion.p>
@@ -162,18 +162,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex gap-4 mt-8 flex-wrap items-center"
+          className="flex flex-col sm:flex-row gap-4 mt-8 items-center justify-center lg:justify-start w-full sm:w-auto"
         >
           {/* Primary Glow CTA Button */}
           <motion.button
             onClick={onOpenBooking}
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative cta-primary h-14 px-9 rounded-xl text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-3 cursor-pointer overflow-hidden"
+            className="group relative cta-primary h-14 px-8 w-full sm:w-[210px] rounded-xl text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 cursor-pointer overflow-hidden text-center"
           >
             {/* Ambient Shine Overlay */}
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               Book a Session
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
@@ -184,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             href="#results"
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
-            className="h-14 px-8 rounded-xl border border-[#242424] bg-[#0F0F0F]/60 backdrop-blur-sm text-white text-sm font-bold uppercase tracking-wider hover:border-[#FF2400]/60 hover:bg-[#FF2400]/10 transition-all flex items-center justify-center gap-2"
+            className="h-14 px-8 w-full sm:w-[210px] rounded-xl border border-[#242424] bg-[#0F0F0F]/60 backdrop-blur-sm text-white text-sm font-bold uppercase tracking-wider hover:border-[#FF2400]/60 hover:bg-[#FF2400]/10 transition-all flex items-center justify-center gap-2 text-center"
           >
             <Sparkles className="w-4 h-4 text-[#FF2400]" />
             View Results
@@ -192,19 +192,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         </motion.div>
 
         {/* Stats Row with Animated Scale Up */}
-        <div className="flex gap-8 md:gap-14 mt-12 pt-8 border-t border-[#242424]/80 flex-wrap">
+        <div className="flex gap-8 md:gap-14 mt-12 pt-8 border-t border-[#242424]/80 flex-wrap justify-center lg:justify-start w-full lg:w-auto">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.85 + index * 0.1, type: "spring", stiffness: 200 }}
-              className="flex flex-col group cursor-default"
+              className="flex flex-col items-center lg:items-start group cursor-default"
             >
               <span className="font-['Barlow_Condensed'] text-4xl md:text-5xl font-black text-[#FF2400] leading-none group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(255,36,0,0.75)] transition-all duration-300">
                 {stat.value}
               </span>
-              <span className="text-xs text-neutral-400 uppercase tracking-widest mt-1.5 font-semibold group-hover:text-white transition-colors">
+              <span className="text-xs text-neutral-400 uppercase tracking-widest mt-1.5 font-semibold group-hover:text-white transition-colors text-center lg:text-left">
                 {stat.label}
               </span>
             </motion.div>

@@ -49,7 +49,7 @@ export const TransformationCard: React.FC<TransformationCardProps> = ({
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-      className="rounded-2xl p-4 bg-[#0F0F0F] border border-[#242424] hover:border-[#FF2400]/40 transition-all duration-300 flex flex-col justify-between"
+      className="rounded-2xl p-4 bg-[#0F0F0F] border border-[#242424] hover:border-[#FF2400]/40 transition-all duration-300 flex flex-col justify-between h-full"
     >
       {/* Before / After Slider Container */}
       <div
@@ -110,13 +110,15 @@ export const TransformationCard: React.FC<TransformationCardProps> = ({
       </div>
 
       {/* Text Info */}
-      <div className="mt-5 px-2">
-        <h3 className="font-['Barlow_Condensed'] font-black uppercase text-xl md:text-2xl text-white tracking-wide leading-tight">
-          {name}
-        </h3>
-        <p className="text-xs font-bold text-[#FF2400] uppercase tracking-widest mt-1">
-          {duration}
-        </p>
+      <div className="mt-5 px-2 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 className="font-['Barlow_Condensed'] font-black uppercase text-xl md:text-2xl text-white tracking-wide leading-tight min-h-[3rem] md:min-h-[3.5rem] flex items-start">
+            {name}
+          </h3>
+          <p className="text-xs font-bold text-[#FF2400] uppercase tracking-widest mt-1">
+            {duration}
+          </p>
+        </div>
         <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
           {tagline}
         </p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, CheckCircle, Clock, Dumbbell, User, Mail, Phone } from 'lucide-react';
+import { X, CheckCircle, Clock, Dumbbell, User, Mail, Phone, ChevronDown } from 'lucide-react';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -48,7 +48,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-lg bg-[#0F0F0F] border border-[#242424] rounded-2xl p-6 md:p-8 shadow-2xl z-10 my-8"
+          className="relative w-full max-w-xl bg-[#0F0F0F] border border-[#242424] rounded-2xl p-6 sm:p-8 shadow-2xl z-10 my-8"
         >
           {/* Close button */}
           <button
@@ -117,35 +117,41 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1.5 flex items-center gap-1.5">
                       <Dumbbell className="w-3.5 h-3.5 text-[#FF2400]" /> Select Program
                     </label>
-                    <select
-                      value={formData.program}
-                      onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                      className="w-full bg-[#141414] border border-[#242424] rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF2400] transition-colors"
-                    >
-                      <option value="1-on-1 Training">1-on-1 Personal Training</option>
-                      <option value="Online Coaching">Online Coaching</option>
-                      <option value="Nutrition Plans">Custom Nutrition Plan</option>
-                      <option value="Hybrid VIP">Hybrid VIP Coaching</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={formData.program}
+                        onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                        className="w-full bg-[#141414] border border-[#242424] rounded-lg pl-3.5 pr-9 py-3 text-sm text-white focus:outline-none focus:border-[#FF2400] transition-colors cursor-pointer appearance-none"
+                      >
+                        <option value="1-on-1 Training" className="bg-[#141414] text-white py-2">1-on-1 Personal Training</option>
+                        <option value="Online Coaching" className="bg-[#141414] text-white py-2">Online Coaching</option>
+                        <option value="Nutrition Plans" className="bg-[#141414] text-white py-2">Custom Nutrition Plan</option>
+                        <option value="Hybrid VIP" className="bg-[#141414] text-white py-2">Hybrid VIP Coaching</option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-neutral-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    </div>
                   </div>
                   <div>
                     <label className="block text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1.5 flex items-center gap-1.5">
                       <Clock className="w-3.5 h-3.5 text-[#FF2400]" /> Preferred Time Window
                     </label>
-                    <select
-                      value={formData.preferredTime}
-                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="w-full bg-[#141414] border border-[#242424] rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF2400] transition-colors"
-                    >
-                      <option value="Morning (8:00 AM - 12:00 PM)">Morning (8 AM - 12 PM)</option>
-                      <option value="Afternoon (12:00 PM - 5:00 PM)">Afternoon (12 PM - 5 PM)</option>
-                      <option value="Evening (5:00 PM - 9:00 PM)">Evening (5 PM - 9 PM)</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        value={formData.preferredTime}
+                        onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                        className="w-full bg-[#141414] border border-[#242424] rounded-lg pl-3.5 pr-9 py-3 text-sm text-white focus:outline-none focus:border-[#FF2400] transition-colors cursor-pointer appearance-none"
+                      >
+                        <option value="Morning (8:00 AM - 12:00 PM)" className="bg-[#141414] text-white py-2">Morning (8 AM - 12 PM)</option>
+                        <option value="Afternoon (12:00 PM - 5:00 PM)" className="bg-[#141414] text-white py-2">Afternoon (12 PM - 5 PM)</option>
+                        <option value="Evening (5:00 PM - 9:00 PM)" className="bg-[#141414] text-white py-2">Evening (5 PM - 9 PM)</option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-neutral-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    </div>
                   </div>
                 </div>
 

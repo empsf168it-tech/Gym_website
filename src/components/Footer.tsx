@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, ArrowUp, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { Logo } from './Logo';
 import { BRAND_CONFIG } from '../config/brand';
 
@@ -18,10 +18,6 @@ export const Footer: React.FC = () => {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-[#050505] border-t border-[#242424] text-neutral-300 relative overflow-hidden">
       {/* Glow Orbs */}
@@ -29,8 +25,8 @@ export const Footer: React.FC = () => {
 
       {/* Top Newsletter / VIP Access Bar */}
       <div className="border-b border-[#242424]/80 py-12 bg-[#0A0A0A]/60">
-        <div className="max-w-[1120px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="max-w-xl text-center md:text-left">
+        <div className="max-w-[1120px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#FF2400] block mb-2">
               VIP Fitness Newsletter
             </span>
@@ -42,10 +38,10 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubscribe} className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+          <form onSubmit={handleSubscribe} className="w-full lg:w-auto flex flex-col sm:flex-row items-center justify-center gap-3">
             {!newsletterSubscribed ? (
               <>
-                <div className="relative flex-1 sm:w-80">
+                <div className="relative w-full sm:w-80">
                   <input
                     type="email"
                     required
@@ -58,13 +54,13 @@ export const Footer: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="h-11 px-7 rounded-lg text-white font-extrabold text-xs uppercase tracking-wider cta-primary flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto h-11 px-7 rounded-lg text-white font-extrabold text-xs uppercase tracking-wider cta-primary flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
                 >
                   Subscribe <Send className="w-3.5 h-3.5" />
                 </button>
               </>
             ) : (
-              <div className="flex items-center gap-2 bg-[#FF2400]/15 border border-[#FF2400]/40 px-5 py-3 rounded-lg text-[#FF2400] text-xs font-bold uppercase tracking-wider">
+              <div className="flex items-center justify-center gap-2 bg-[#FF2400]/15 border border-[#FF2400]/40 px-5 py-3 rounded-lg text-[#FF2400] text-xs font-bold uppercase tracking-wider">
                 <CheckCircle2 className="w-4 h-4 text-[#FF2400]" /> You're on the list! Welcome to {BRAND_CONFIG.name}.
               </div>
             )}
@@ -226,14 +222,6 @@ export const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-
-          {/* Scroll to top button */}
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-[#FF2400] bg-[#121212] border border-[#242424] hover:border-[#FF2400]/50 px-4 py-2 rounded-lg transition-colors cursor-pointer"
-          >
-            Back to Top <ArrowUp className="w-3.5 h-3.5" />
-          </button>
         </div>
       </div>
 
